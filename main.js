@@ -194,9 +194,9 @@
 
   function initProjectCards() {
     var cards = {
-      'card-web': 'projects/web-project.html',
-      'card-patagonia': 'projects/patagonia.html',
-      'card-api': 'projects/android-app.html'
+      'card-web': '/projects/web-project/',
+      'card-patagonia': '/projects/patagonia/',
+      'card-api': '/projects/android-app/'
     };
     for (var id in cards) {
       if (cards.hasOwnProperty(id)) {
