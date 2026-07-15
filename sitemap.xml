@@ -10,9 +10,9 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mostafakhrais.dev/cv.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mostafakhrais.dev/cv.html"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://mostafakhrais.dev/cv.html?lang=ar"/>
+    <loc>https://mostafakhrais.dev/cv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mostafakhrais.dev/cv/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://mostafakhrais.dev/cv/?lang=ar"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

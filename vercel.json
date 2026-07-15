@@ -38,10 +38,7 @@
   ],
   "redirects": [
     { "source": "/portfolio", "destination": "/", "permanent": true },
-    { "source": "/favicon.ico", "destination": "/favicon.svg", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/patagonia", "destination": "/patagonia/" },
-    { "source": "/website", "destination": "/website/" }
+    { "source": "/favicon.ico", "destination": "/favicon.svg", "permanent": true },
+    { "source": "/cv", "destination": "/cv/", "permanent": true }
   ]
 }
