@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<title>Manara Android — Mustafa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#12121A; --bg-soft:#191925; --card:#1E1E2C; --purple:#7C3AED; --coral:#FF4B6E; --lime:#C4F135; --text:#F4F2FF; --muted:#8E8AA3; --border:#2C2C3E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
+  [dir="rtl"] body{ font-family:'Tajawal','Cairo',sans-serif; }
+  .blob{ position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; }
+  .blob1{ width:420px; height:420px; background:var(--purple); top:-120px; inset-inline-end:-100px; }
+  .blob2{ width:360px; height:360px; background:var(--coral); bottom:-100px; inset-inline-start:-120px; opacity:.25; }
+  nav{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px 6vw; background:rgba(18,18,26,.75); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .logo{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--lime); text-decoration:none; }
+  .logo span{ color:var(--muted); }
+  .back-link{ color:var(--muted); text-decoration:none; font-size:.9rem; border:1px solid var(--border); padding:8px 18px; border-radius:999px; transition:.2s; }
+  .back-link:hover{ border-color:var(--lime); color:var(--lime); }
+  .lang-btn{ background:var(--card); border:1px solid var(--border); color:var(--text); padding:8px 16px; border-radius:999px; cursor:pointer; font-family:inherit; font-weight:700; font-size:.85rem; transition:.2s; }
+  .lang-btn:hover{ border-color:var(--lime); color:var(--lime); }
+  section{ position:relative; z-index:1; padding:80px 6vw; max-width:800px; margin:0 auto; }
+  .project-hero{ padding-top:50px; }
+  .project-hero h1{ font-size:clamp(2rem,4vw,3rem); font-weight:900; margin-bottom:12px; }
+  .project-hero .tagline{ color:var(--muted); font-size:1.1rem; margin-bottom:30px; }
+  .tech-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+  .tech-tag{ background:var(--card); border:1px solid var(--border); color:var(--lime); padding:6px 14px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.8rem; }
+  .project-content h2{ font-size:1.4rem; font-weight:800; margin:30px 0 16px; color:var(--lime); }
+  .project-content p{ color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:16px; }
+  .project-content ul{ color:var(--muted); line-height:2; padding-inline-start:20px; margin-bottom:20px; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin:40px 0; }
+  .btn{ padding:14px 28px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.2s; font-size:.95rem; }
+  .btn-primary{ background:var(--lime); color:#12121A; }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(196,241,53,.25); }
+  .btn-ghost{ border:1px solid var(--border); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--coral); color:var(--coral); }
+  .screenshot{ width:100%; border-radius:16px; border:1px solid var(--border); margin:30px 0; aspect-ratio:16/9; background:linear-gradient(135deg,#4A3570,#2A1F45); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#D0BCFF; font-family:'JetBrains Mono',monospace; }
+  .screenshot span.title{ font-size:2rem; font-weight:900; color:#FFC94D; letter-spacing:3px; }
+  .screenshot span.sub{ font-size:.85rem; opacity:.8; }
+  footer{ text-align:center; padding:30px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav>
+  <a href="../index.html" class="logo">Mustafa<span>.dev</span></a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="../index.html" class="back-link" data-i18n="nav_back">← Back</a>
+    <button class="lang-btn" id="langBtn">AR</button>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <h1 data-i18n="title">Manara Android — منارة</h1>
+  <p class="tagline" data-i18n="tagline">A full-featured Android app for Tawjihi students — currently under development</p>
+  <div class="tech-tags">
+    <span class="tech-tag">Java</span>
+    <span class="tech-tag">Android SDK</span>
+    <span class="tech-tag">SQLite</span>
+    <span class="tech-tag">Material Design</span>
+    <span class="tech-tag">RTL</span>
+    <span class="tech-tag">Data Binding</span>
+  </div>
+  <div class="screenshot"><span class="title" data-i18n="screenshot_title">مَنَارَة</span><span class="sub" data-i18n="screenshot_sub">Android App</span></div>
+  <div class="btn-row">
+    <a href="../index.html" class="btn btn-ghost" data-i18n="back_btn">← Back to portfolio</a>
+  </div>
+</section>
+
+<section class="project-content">
+  <h2 data-i18n="about_title">About This Project</h2>
+  <p data-i18n="about_p1">Manara (منارة) is a native Android application built with Java, designed specifically for Tawjihi (General Secondary Education) students in Palestine — currently under active development. The app will provide comprehensive access to textbooks, past exam papers, summaries, and study materials across all subjects, all available for offline use. It will share a unified database with the companion Manara website, ensuring seamless content synchronization across platforms.</p>
+  <p data-i18n="about_p2">The app features a modern Material Design interface with a dark purple and gold brand identity, full Arabic/RTL support, and an intuitive navigation system. Built with a focus on performance and offline reliability, Manara delivers a smooth user experience even in low-connectivity environments.</p>
+
+  <h2 data-i18n="features_title">Key Features</h2>
+  <ul>
+    <li data-i18n="feat1">Browse and download textbooks, past exams, and summaries by subject</li>
+    <li data-i18n="feat2">Full offline access — all downloaded content available without internet</li>
+    <li data-i18n="feat3">Built-in PDF viewer with smooth navigation and zoom</li>
+    <li data-i18n="feat4">Track and continue where you left off with recent files</li>
+    <li data-i18n="feat5">Bookmark favourite files and save them for quick access</li>
+    <li data-i18n="feat6">Exam countdown timer and study reminders</li>
+    <li data-i18n="feat7">User accounts with cloud sync across devices</li>
+    <li data-i18n="feat8">Full Arabic interface with RTL layout and Arabic typography (Cairo font)</li>
+    <li data-i18n="feat9">Dark theme optimized for reading and study sessions</li>
+    <li data-i18n="feat10">Shared database with the companion Manara website platform</li>
+  </ul>
+
+  <h2 data-i18n="status_title">Status</h2>
+  <p data-i18n="status_text">Currently under active development. The app will be released soon. Stay tuned for updates.</p>
+
+  <h2 data-i18n="stack_title">Technical Architecture</h2>
+  <p data-i18n="stack_text">The app is built using Java with Android SDK, following a clean architecture with Room database for local storage, Retrofit for network communication, and Data Binding for efficient UI updates. The navigation system uses Android Navigation Component with a bottom navigation bar pattern. The app integrates with a shared backend database that also powers the Manara website, enabling cross-platform data consistency. The project is managed with Git for version control and follows Material Design guidelines for a polished user experience.</p>
+
+  <h2 data-i18n="learned_title">Project Insights</h2>
+  <p data-i18n="learned_text">Building Manara Android was a comprehensive exercise in native mobile development — covering the full spectrum from database design and offline storage to polished UI/UX with Arabic RTL support. Coordinating the app with a companion website sharing the same data layer provided valuable experience in cross-platform architecture. Implementing features like offline PDF viewing, download management, and progress tracking required careful attention to performance and user experience on mobile devices with varying capabilities.</p>
+</section>
+
+<footer>
+  <span data-i18n="footer_text">© 2026 Built with passion (and way too many semicolons)</span>
+</footer>
+
+<script>
+const translations = {
+  ar: {
+    nav_back:"← رجوع",
+    title:"Manara Android — منارة",
+    tagline:"تطبيق Android متكامل لطلاب التوجيهي — قيد التطوير حالياً",
+    screenshot_title:"مَنَارَة", screenshot_sub:"تطبيق Android",
+    back_btn:"← الرجوع للمعرض",
+    about_title:"عن المشروع",
+    about_p1:"منارة هو تطبيق Android أصلي مبني بـ Java، مصمم خصيصاً لطلاب التوجيهي في فلسطين — قيد التطوير النشط حالياً. التطبيق سيوفر وصولاً شاملاً للكتب المدرسية، امتحانات سابقة، ملخصات، ومواد دراسية لجميع المواد، كلها متاحة للاستخدام بدون إنترنت. سيشترك في قاعدة بيانات موحدة مع موقع منارة الإلكتروني، مما يضمن تزامناً سلساً للمحتوى عبر المنصات.",
+    about_p2:"التطبيق يتميز بواجهة Material Design عصرية مع هوية أرجواني وذهبي، دعم كامل للعربية/RTL، ونظام تنقل بديهي. مبني مع التركيز على الأداء والموثوقية عند عدم الاتصال، منارة يوفر تجربة مستخدم سلسة حتى في بيئات الاتصال المحدود.",
+    features_title:"الميزات الرئيسية",
+    feat1:"تصفح وتحميل الكتب المدرسية، الامتحانات السابقة، والملخصات حسب المادة",
+    feat2:"وصول كامل بدون إنترنت — كل المحتوى المحمّل متاح دون اتصال",
+    feat3:"عارض PDF مدمج مع تنقل سلس وتكبير",
+    feat4:"تتبع واستكمال من حيث توقفت مع الملفات الحديثة",
+    feat5:"إضافة إشارات مرجعية للملفات المفضلة للوصول السريع",
+    feat6:"عداد تنازلي للامتحانات وتذكيرات دراسة",
+    feat7:"حسابات مستخدمين مع مزامنة سحابية عبر الأجهزة",
+    feat8:"واجهة عربية كاملة مع تخطيط RTL وطباعة عربية (خط Cairo)",
+    feat9:"ثيمة داكنة محسّنة للقراءة وجلسات الدراسة",
+    feat10:"قاعدة بيانات مشتركة مع منصة موقع منارة الإلكتروني",
+    stack_title:"الهندسة التقنية",
+    stack_text:"التطبيق مبني باستخدام Java مع Android SDK، باتباع هندسة نظيفة مع Room database للتخزين المحلي، Retrofit للاتصال بالشبكة، و Data Binding لتحديثات واجهة فعالة. نظام التنقل يستخدم Android Navigation Component مع نمط شريط التنقل السفلي. التطبيق يتكامل مع قاعدة بيانات خلفية مشتركة تغذي أيضاً موقع منارة، مما يتيح تناسق البيانات عبر المنصات. المشروع يُدار بـ Git للتحكم بالإصدارات ويتبع إرشادات Material Design لتجربة مستخدم مصقولة.",
+    learned_title:"رؤى المشروع",
+    learned_text:"بناء منارة Android كان تمريناً شاملاً في تطوير الجوال الأصلي — يغطي الطيف الكامل من تصميم قاعدة البيانات والتخزين بدون إنترنت إلى UI/UX مصقول مع دعم Arabic RTL. تنسيق التطبيق مع موقع إلكتروني مرافق يشارك نفس طبقة البيانات وفرّ خبرة قيمة في هندسة المنصات المتعددة. تنفيذ ميزات مثل عرض PDF بدون إنترنت، إدارة التحميل، وتتبع التقدم تطلب اهتماماً دقيقاً بالأداء وتجربة المستخدم على أجهزة جوالة بإمكانيات متفاوتة.",
+    status_title:"الحالة", status_text:"قيد التطوير النشط حالياً. سيتم إطلاق التطبيق قريباً. تابعونا للتحديثات.",
+    footer_text:"© 2026 معمول بشغف (وكمية فاصلة منقوطة زيادة)"
+  }
+};
+translations.en = {
+  nav_back:"← Back",
+  title:"Manara Android — منارة",
+  tagline:"A full-featured Android app for Tawjihi students with offline access to study materials",
+  screenshot_title:"Manara", screenshot_sub:"Android App",
+  back_btn:"← Back to portfolio",
+  about_title:"About This Project",
+  about_p1:"Manara (منارة) is a native Android application built with Java, designed specifically for Tawjihi (General Secondary Education) students in Palestine. The app provides comprehensive access to textbooks, past exam papers, summaries, and study materials across all subjects — all available for offline use. It shares a unified database with the companion Manara website, ensuring seamless content synchronization across platforms.",
+  about_p2:"The app features a modern Material Design interface with a dark purple and gold brand identity, full Arabic/RTL support, and an intuitive navigation system. Built with a focus on performance and offline reliability, Manara delivers a smooth user experience even in low-connectivity environments.",
+  features_title:"Key Features",
+  feat1:"Browse and download textbooks, past exams, and summaries by subject",
+  feat2:"Full offline access — all downloaded content available without internet",
+  feat3:"Built-in PDF viewer with smooth navigation and zoom",
+  feat4:"Track and continue where you left off with recent files",
+  feat5:"Bookmark favourite files and save them for quick access",
+  feat6:"Exam countdown timer and study reminders",
+  feat7:"User accounts with cloud sync across devices",
+  feat8:"Full Arabic interface with RTL layout and Arabic typography (Cairo font)",
+  feat9:"Dark theme optimized for reading and study sessions",
+  feat10:"Shared database with the companion Manara website platform",
+  stack_title:"Technical Architecture",
+  stack_text:"The app is built using Java with Android SDK, following a clean architecture with Room database for local storage, Retrofit for network communication, and Data Binding for efficient UI updates. The navigation system uses Android Navigation Component with a bottom navigation bar pattern. The app integrates with a shared backend database that also powers the Manara website, enabling cross-platform data consistency. The project is managed with Git for version control and follows Material Design guidelines for a polished user experience.",
+  learned_title:"Project Insights",
+  learned_text:"Building Manara Android was a comprehensive exercise in native mobile development — covering the full spectrum from database design and offline storage to polished UI/UX with Arabic RTL support. Coordinating the app with a companion website sharing the same data layer provided valuable experience in cross-platform architecture. Implementing features like offline PDF viewing, download management, and progress tracking required careful attention to performance and user experience on mobile devices with varying capabilities.",
+  status_title:"Status", status_text:"Currently under active development. The app will be released soon. Stay tuned for updates.",
+  footer_text:"© 2026 Built with passion (and way too many semicolons)"
+};
+let currentLang = 'en';
+try{ currentLang = localStorage.getItem('portfolio_lang') || 'en'; }catch(e){};
+applyLang();
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+function toggleLang(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  try{ localStorage.setItem('portfolio_lang', currentLang);
+  }catch(e){};
+  applyLang();
+}
+function applyLang(){
+  const html = document.getElementById('htmlRoot');
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
+  });
+}
+</script>
+</body>
+</html>

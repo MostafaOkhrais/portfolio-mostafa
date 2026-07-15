@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<title>Manara — Mustafa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#12121A; --bg-soft:#191925; --card:#1E1E2C; --purple:#7C3AED; --coral:#FF4B6E; --lime:#C4F135; --text:#F4F2FF; --muted:#8E8AA3; --border:#2C2C3E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
+  [dir="rtl"] body{ font-family:'Tajawal','Cairo',sans-serif; }
+  .blob{ position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; }
+  .blob1{ width:420px; height:420px; background:var(--purple); top:-120px; inset-inline-end:-100px; }
+  .blob2{ width:360px; height:360px; background:var(--coral); bottom:-100px; inset-inline-start:-120px; opacity:.25; }
+  nav{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px 6vw; background:rgba(18,18,26,.75); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .logo{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--lime); text-decoration:none; }
+  .logo span{ color:var(--muted); }
+  .back-link{ color:var(--muted); text-decoration:none; font-size:.9rem; border:1px solid var(--border); padding:8px 18px; border-radius:999px; transition:.2s; }
+  .back-link:hover{ border-color:var(--lime); color:var(--lime); }
+  .lang-btn{ background:var(--card); border:1px solid var(--border); color:var(--text); padding:8px 16px; border-radius:999px; cursor:pointer; font-family:inherit; font-weight:700; font-size:.85rem; transition:.2s; }
+  .lang-btn:hover{ border-color:var(--lime); color:var(--lime); }
+  section{ position:relative; z-index:1; padding:80px 6vw; max-width:800px; margin:0 auto; }
+  .project-hero{ padding-top:50px; }
+  .project-hero h1{ font-size:clamp(2rem,4vw,3rem); font-weight:900; margin-bottom:12px; }
+  .project-hero .tagline{ color:var(--muted); font-size:1.1rem; margin-bottom:30px; }
+  .tech-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+  .tech-tag{ background:var(--card); border:1px solid var(--border); color:var(--lime); padding:6px 14px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.8rem; }
+  .project-content h2{ font-size:1.4rem; font-weight:800; margin:30px 0 16px; color:var(--lime); }
+  .project-content p{ color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:16px; }
+  .project-content ul{ color:var(--muted); line-height:2; padding-inline-start:20px; margin-bottom:20px; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin:40px 0; }
+  .btn{ padding:14px 28px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.2s; font-size:.95rem; }
+  .btn-primary{ background:var(--lime); color:#12121A; }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(196,241,53,.25); }
+  .btn-ghost{ border:1px solid var(--border); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--coral); color:var(--coral); }
+  .screenshot{ width:100%; border-radius:16px; border:1px solid var(--border); margin:30px 0; aspect-ratio:16/9; background:url('../website/brave_cVwAQXh0vW.png') center/cover; display:flex; align-items:center; justify-content:center; position:relative; }
+  .screenshot .overlay{ position:absolute; inset:0; background:linear-gradient(135deg,rgba(74,53,112,.4),rgba(42,31,69,.5)); border-radius:16px; }
+  .screenshot span{ position:relative; z-index:2; font-size:1.6rem; font-weight:900; color:#FFC94D; text-shadow:0 2px 10px rgba(0,0,0,.5); font-family:'JetBrains Mono',monospace; }
+  footer{ text-align:center; padding:30px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav>
+  <a href="../index.html" class="logo">Mustafa<span>.dev</span></a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="../index.html" class="back-link" data-i18n="nav_back">← Back</a>
+    <button class="lang-btn" id="langBtn">AR</button>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <h1 data-i18n="title">Manara — منارة</h1>
+  <p class="tagline" data-i18n="tagline">A full-stack educational platform for Tawjihi students with an Android app and companion website</p>
+  <div class="tech-tags">
+    <span class="tech-tag">HTML5</span>
+    <span class="tech-tag">CSS3</span>
+    <span class="tech-tag">JavaScript</span>
+    <span class="tech-tag">Java</span>
+    <span class="tech-tag">Android</span>
+    <span class="tech-tag">RTL</span>
+  </div>
+  <div class="screenshot"><div class="overlay"></div><span data-i18n="screenshot">مَنَارَة</span></div>
+  <div class="btn-row">
+    <a href="../website/index.html" class="btn btn-primary" data-i18n="live_btn">Live preview →</a>
+    <a href="../index.html" class="btn btn-ghost" data-i18n="back_btn">← Back to portfolio</a>
+  </div>
+</section>
+
+<section class="project-content">
+  <h2 data-i18n="about_title">About This Project</h2>
+  <p data-i18n="about_p1">Manara (منارة) is a full-stack educational platform built specifically for Tawjihi (General Secondary Education) students in Palestine. The project consists of two integrated components: an Android application built with Java and a companion website built with HTML, CSS, and JavaScript — both sharing the same database for seamless content synchronization.</p>
+  <p data-i18n="about_p2">The platform provides students with access to textbooks, past exam papers, summaries, and study materials across all subjects. Content is available for offline access, allowing students to study without an internet connection. The project reflects a deep understanding of the local educational system and the specific needs of Tawjihi students.</p>
+
+  <h2 data-i18n="features_title">Key Features</h2>
+  <ul>
+    <li data-i18n="feat1">Android application built with Java for mobile access</li>
+    <li data-i18n="feat2">Companion website for desktop and web access</li>
+    <li data-i18n="feat3">Shared database architecture between app and website</li>
+    <li data-i18n="feat4">Full Arabic language support with RTL layout</li>
+    <li data-i18n="feat5">Offline content access — books, exams, and summaries available without internet</li>
+    <li data-i18n="feat6">Clean, modern UI with purple and gold brand identity</li>
+    <li data-i18n="feat7">Responsive design optimized for all devices</li>
+  </ul>
+
+  <h2 data-i18n="stack_title">Technical Architecture</h2>
+  <p data-i18n="stack_text">The project follows a full-stack architecture with a shared database layer powering both the Android app (Java) and the website (HTML/CSS/JS). The website features a modern dark theme with purple and gold accents, Arabic-first RTL design, and a clean user interface optimized for browsing educational content. Version control and project tracking were managed through Git throughout development.</p>
+
+  <h2 data-i18n="learned_title">Project Insights</h2>
+  <p data-i18n="learned_text">Building Manara required coordinating two separate front-end platforms (Android and web) around a single data layer — a valuable lesson in cross-platform architecture. The project also demanded careful attention to Arabic typography, RTL layout principles, and designing an interface that feels natural and intuitive for the target audience of students. Managing the full stack independently — from database design to UI screens — provided a comprehensive end-to-end development experience.</p>
+</section>
+
+<footer>
+  <span data-i18n="footer_text">© 2026 Built with passion (and way too many semicolons)</span>
+</footer>
+
+<script>
+const translations = {
+  ar: {
+    nav_back:"← رجوع",
+    title:"Manara — منارة",
+    tagline:"منصة تعليمية متكاملة لطلاب التوجيهي مع تطبيق أندرويد وموقع إلكتروني",
+    screenshot:"مَنَارَة",
+    live_btn:"معاينة مباشرة →",
+    back_btn:"← الرجوع للمعرض",
+    about_title:"عن المشروع",
+    about_p1:"منارة هي منصة تعليمية Full-stack بُنيت خصيصاً لطلاب التوجيهي في فلسطين. المشروع يتكون من مكونين متكاملين: تطبيق Android بلغة Java وموقع إلكتروني بـ HTML و CSS و JavaScript — كلاهما يشاركان نفس قاعدة البيانات لتزامن سلس للمحتوى.",
+    about_p2:"المنصة توفر للطلاب إمكانية الوصول إلى الكتب المدرسية، امتحانات سابقة، ملخصات، ومواد دراسية لجميع المواد. المحتوى متاح للوصول بدون إنترنت، مما يسمح للطلاب بالدراسة دون اتصال. المشروع يعكس فهماً عميقاً للنظام التعليمي المحلي والاحتياجات الخاصة لطلاب التوجيهي.",
+    features_title:"الميزات الرئيسية",
+    feat1:"تطبيق Android مبني بـ Java للوصول عبر الجوال",
+    feat2:"موقع إلكتروني مرافق للوصول عبر الكمبيوتر والمتصفح",
+    feat3:"هندسة قاعدة بيانات مشتركة بين التطبيق والموقع",
+    feat4:"دعم كامل للغة العربية مع تخطيط RTL",
+    feat5:"الوصول للمحتوى بدون إنترنت — كتب، امتحانات، وملخصات متاحة بدون اتصال",
+    feat6:"واجهة مستخدم نظيفة وعصرية بهوية أرجواني وذهبي",
+    feat7:"تصميم متجاوب محسّن لجميع الأجهزة",
+    stack_title:"الهندسة التقنية",
+    stack_text:"المشروع يتبع هندسة Full-stack مع طبقة قاعدة بيانات مشتركة تغذي تطبيق Android (Java) والموقع (HTML/CSS/JS). الموقع يتميز بثيمة داكنة عصرية مع ألوان أرجواني وذهبي، تصميم عربي RTL أولاً، وواجهة مستخدم نظيفة محسّنة لتصفح المحتوى التعليمي. إدارة المشروع وتتبعه تمت عبر Git طوال مرحلة التطوير.",
+    learned_title:"رؤى المشروع",
+    learned_text:"بناء منارة تطلب تنسيق منصتي واجهة أمامية منفصلتين (Android والويب) حول طبقة بيانات واحدة — درس قيم في هندسة المنصات المتعددة. المشروع أيضاً تطلب اهتماماً دقيقاً بالطباعة العربية، مبادئ تخطيط RTL، وتصميم واجهة طبيعية وبديهية للجمهور المستهدف من الطلاب. إدارة الـ full stack بشكل مستقل — من تصميم قاعدة البيانات إلى شاشات الواجهة — وفرت تجربة تطوير شاملة من البداية للنهاية.",
+    footer_text:"© 2026 معمول بشغف (وكمية فاصلة منقوطة زيادة)"
+  }
+};
+translations.en = {
+  nav_back:"← Back",
+  title:"Manara — منارة",
+  tagline:"A full-stack educational platform for Tawjihi students with an Android app and companion website",
+  screenshot:"Manara",
+  live_btn:"Live preview →",
+  back_btn:"← Back to portfolio",
+  about_title:"About This Project",
+  about_p1:"Manara (منارة) is a full-stack educational platform built specifically for Tawjihi (General Secondary Education) students in Palestine. The project consists of two integrated components: an Android application built with Java and a companion website built with HTML, CSS, and JavaScript — both sharing the same database for seamless content synchronization.",
+  about_p2:"The platform provides students with access to textbooks, past exam papers, summaries, and study materials across all subjects. Content is available for offline access, allowing students to study without an internet connection. The project reflects a deep understanding of the local educational system and the specific needs of Tawjihi students.",
+  features_title:"Key Features",
+  feat1:"Android application built with Java for mobile access",
+  feat2:"Companion website for desktop and web access",
+  feat3:"Shared database architecture between app and website",
+  feat4:"Full Arabic language support with RTL layout",
+  feat5:"Offline content access — books, exams, and summaries available without internet",
+  feat6:"Clean, modern UI with purple and gold brand identity",
+  feat7:"Responsive design optimized for all devices",
+  stack_title:"Technical Architecture",
+  stack_text:"The project follows a full-stack architecture with a shared database layer powering both the Android app (Java) and the website (HTML/CSS/JS). The website features a modern dark theme with purple and gold accents, Arabic-first RTL design, and a clean user interface optimized for browsing educational content. Version control and project tracking were managed through Git throughout development.",
+  learned_title:"Project Insights",
+  learned_text:"Building Manara required coordinating two separate front-end platforms (Android and web) around a single data layer — a valuable lesson in cross-platform architecture. The project also demanded careful attention to Arabic typography, RTL layout principles, and designing an interface that feels natural and intuitive for the target audience of students. Managing the full stack independently — from database design to UI screens — provided a comprehensive end-to-end development experience.",
+  footer_text:"© 2026 Built with passion (and way too many semicolons)"
+};
+let currentLang = 'en';
+try{ currentLang = localStorage.getItem('portfolio_lang') || 'en'; }catch(e){};
+applyLang();
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+function toggleLang(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  try{ localStorage.setItem('portfolio_lang', currentLang);
+  }catch(e){};
+  applyLang();
+}
+function applyLang(){
+  const html = document.getElementById('htmlRoot');
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
+  });
+}
+</script>
+</body>
+</html>

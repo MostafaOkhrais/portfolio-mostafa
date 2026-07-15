@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<title>API Service — Mustafa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#12121A; --bg-soft:#191925; --card:#1E1E2C; --purple:#7C3AED; --coral:#FF4B6E; --lime:#C4F135; --text:#F4F2FF; --muted:#8E8AA3; --border:#2C2C3E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
+  [dir="rtl"] body{ font-family:'Tajawal','Cairo',sans-serif; }
+  .blob{ position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; }
+  .blob1{ width:420px; height:420px; background:var(--purple); top:-120px; inset-inline-end:-100px; }
+  .blob2{ width:360px; height:360px; background:var(--coral); bottom:-100px; inset-inline-start:-120px; opacity:.25; }
+  nav{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px 6vw; background:rgba(18,18,26,.75); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .logo{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--lime); text-decoration:none; }
+  .logo span{ color:var(--muted); }
+  .back-link{ color:var(--muted); text-decoration:none; font-size:.9rem; border:1px solid var(--border); padding:8px 18px; border-radius:999px; transition:.2s; }
+  .back-link:hover{ border-color:var(--lime); color:var(--lime); }
+  .lang-btn{
+    background:var(--card); border:1px solid var(--border); color:var(--text);
+    padding:8px 16px; border-radius:999px; cursor:pointer; font-family:inherit;
+    font-weight:700; font-size:.85rem; transition:.2s;
+  }
+  .lang-btn:hover{ border-color:var(--lime); color:var(--lime); }
+  section{ position:relative; z-index:1; padding:80px 6vw; max-width:800px; margin:0 auto; }
+  .project-hero{ padding-top:50px; }
+  .project-hero h1{ font-size:clamp(2rem,4vw,3rem); font-weight:900; margin-bottom:12px; }
+  .project-hero .tagline{ color:var(--muted); font-size:1.1rem; margin-bottom:30px; }
+  .tech-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+  .tech-tag{ background:var(--card); border:1px solid var(--border); color:var(--lime); padding:6px 14px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.8rem; }
+  .project-content h2{ font-size:1.4rem; font-weight:800; margin:30px 0 16px; color:var(--lime); }
+  .project-content p{ color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:16px; }
+  .project-content ul{ color:var(--muted); line-height:2; padding-inline-start:20px; margin-bottom:20px; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin:40px 0; }
+  .btn{ padding:14px 28px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.2s; font-size:.95rem; }
+  .btn-primary{ background:var(--lime); color:#12121A; }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(196,241,53,.25); }
+  .btn-ghost{ border:1px solid var(--border); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--coral); color:var(--coral); }
+  .screenshot{ width:100%; border-radius:16px; border:1px solid var(--border); margin:30px 0; aspect-ratio:16/9; background:linear-gradient(135deg,#0f3443,#34e89e); display:flex; align-items:center; justify-content:center; color:var(--muted); font-family:'JetBrains Mono',monospace; }
+  pre.code{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px; font-family:'JetBrains Mono',monospace; font-size:.85rem; line-height:1.8; overflow-x:auto; color:#c9c6e0; direction:ltr; text-align:left; margin:20px 0; }
+  .tok-com{ color:var(--muted); } .tok-key{ color:var(--coral); } .tok-str{ color:var(--lime); }
+  footer{ text-align:center; padding:30px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav>
+  <a href="../index.html" class="logo">Mustafa<span>.dev</span></a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="../index.html" class="back-link" data-i18n="nav_back">← Back</a>
+    <button class="lang-btn" id="langBtn">AR</button>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <h1 data-i18n="title">API Service</h1>
+  <p class="tagline" data-i18n="tagline">Backend API that handles auth, CRUD, and existential crises</p>
+  <div class="tech-tags">
+    <span class="tech-tag">Node.js</span>
+    <span class="tech-tag">Express</span>
+    <span class="tech-tag">MongoDB</span>
+    <span class="tech-tag">REST</span>
+    <span class="tech-tag">JWT</span>
+  </div>
+  <div class="screenshot" data-i18n="screenshot">API Architecture Diagram</div>
+  <div class="btn-row">
+    <a href="#" class="btn btn-primary" data-i18n="live_btn">Live preview →</a>
+    <a href="../index.html" class="btn btn-ghost" data-i18n="back_btn">← Back to portfolio</a>
+  </div>
+</section>
+
+<section class="project-content">
+  <h2 data-i18n="about_title">About This Project</h2>
+  <p data-i18n="about_p1">A robust RESTful API service built with Node.js and Express, designed to handle user authentication, data CRUD operations, and serve as a reliable backend for web applications.</p>
+  <p data-i18n="about_p2">Built with security and scalability in mind — featuring JWT-based authentication, input validation, error handling middleware, and a clean modular architecture.</p>
+
+  <h2 data-i18n="features_title">Key Features</h2>
+  <ul>
+    <li data-i18n="feat1">JWT authentication & authorization</li>
+    <li data-i18n="feat2">Full CRUD operations with MongoDB</li>
+    <li data-i18n="feat3">Input validation & sanitization</li>
+    <li data-i18n="feat4">Error handling middleware</li>
+    <li data-i18n="feat5">Environment-based configuration</li>
+    <li data-i18n="feat6">API documentation with detailed endpoints</li>
+  </ul>
+
+  <h2 data-i18n="example_title">Example Endpoint</h2>
+  <pre class="code"><span class="tok-com">// GET /api/users — fetch all users</span>
+{
+  <span class="tok-str">"endpoint"</span>: <span class="tok-str">"/api/users"</span>,
+  <span class="tok-str">"method"</span>: <span class="tok-str">"GET"</span>,
+  <span class="tok-str">"auth"</span>: <span class="tok-key">true</span>,
+  <span class="tok-str">"description"</span>: <span class="tok-str">"Returns paginated list of users"</span>
+}</pre>
+
+  <h2 data-i18n="status_title">Status</h2>
+  <p data-i18n="status_text">Fully functional. Available for integration with frontend projects. Feel free to reach out for the full API documentation.</p>
+</section>
+
+<footer>
+  <span data-i18n="footer_text">© 2026 Built with passion (and way too many semicolons)</span>
+</footer>
+
+<script>
+const translations = {
+  ar: {
+    nav_back:"← رجوع",
+    title:"API Service",
+    tagline:"API خلفية بتتعامل مع مصادقة، CRUD، وأزمات وجودية",
+    screenshot:"مخطط معماري للـ API",
+    live_btn:"معاينة مباشرة →",
+    back_btn:"← الرجوع للمعرض",
+    about_title:"عن المشروع",
+    about_p1:"خدمة API RESTful قوية مبنية بـ Node.js و Express، مصممة للتعامل مع مصادقة المستخدمين وعمليات CRUD وتكون باك إند موثوق لتطبيقات الويب.",
+    about_p2:"مبنية بأمان وقابلية للتوسع — مع مصادقة JWT، التحقق من المدخلات، middleware معالجة الأخطاء، وهندسة معيارية نظيفة.",
+    features_title:"الميزات الرئيسية",
+    feat1:"مصادقة JWT وتفويض الأدوار",
+    feat2:"عمليات CRUD كاملة مع MongoDB",
+    feat3:"التحقق من المدخلات وتنقيتها",
+    feat4:"Middleware لمعالجة الأخطاء",
+    feat5:"إعدادات تعتمد على البيئة",
+    feat6:"توثيق API مع نقاط نهاية مفصلة",
+    example_title:"نموذج نقطة نهاية",
+    status_title:"الحالة",
+    status_text:"جاهز بالكامل. متاح للتكامل مع مشاريع الواجهة الأمامية. تواصل معي للحصول على التوثيق الكامل.",
+    footer_text:"© 2026 معمول بشغف (وكمية فاصلة منقوطة زيادة)"
+  }
+};
+translations.en = {
+  title:"API Service",
+  tagline:"Backend API that handles auth, CRUD, and existential crises",
+  screenshot:"API Architecture Diagram",
+  live_btn:"Live preview →",
+  back_btn:"← Back to portfolio",
+  about_title:"About This Project",
+  about_p1:"A robust RESTful API service built with Node.js and Express, designed to handle user authentication, data CRUD operations, and serve as a reliable backend for web applications.",
+  about_p2:"Built with security and scalability in mind — featuring JWT-based authentication, input validation, error handling middleware, and a clean modular architecture.",
+  features_title:"Key Features",
+  feat1:"JWT authentication & authorization",
+  feat2:"Full CRUD operations with MongoDB",
+  feat3:"Input validation & sanitization",
+  feat4:"Error handling middleware",
+  feat5:"Environment-based configuration",
+  feat6:"API documentation with detailed endpoints",
+  example_title:"Example Endpoint",
+  status_title:"Status",
+  status_text:"Fully functional. Available for integration with frontend projects. Feel free to reach out for the full API documentation.",
+  footer_text:"© 2026 Built with passion (and way too many semicolons)"
+};
+let currentLang = 'en';
+try{ currentLang = localStorage.getItem('portfolio_lang') || 'en'; }catch(e){};
+applyLang();
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+function toggleLang(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  try{ localStorage.setItem('portfolio_lang', currentLang);
+  }catch(e){};
+  applyLang();
+}
+function applyLang(){
+  const html = document.getElementById('htmlRoot');
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
+  });
+}
+</script>
+</body>
+</html>

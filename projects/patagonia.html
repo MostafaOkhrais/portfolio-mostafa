@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<title>Patagonia Adventure — Mustafa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#12121A; --bg-soft:#191925; --card:#1E1E2C; --purple:#7C3AED; --coral:#FF4B6E; --lime:#C4F135; --text:#F4F2FF; --muted:#8E8AA3; --border:#2C2C3E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{ background:var(--bg); color:var(--text); font-family:'Space Grotesk',sans-serif; overflow-x:hidden; }
+  [dir="rtl"] body{ font-family:'Tajawal','Cairo',sans-serif; }
+  .blob{ position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; }
+  .blob1{ width:420px; height:420px; background:var(--purple); top:-120px; inset-inline-end:-100px; }
+  .blob2{ width:360px; height:360px; background:var(--coral); bottom:-100px; inset-inline-start:-120px; opacity:.25; }
+  nav{ position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; padding:20px 6vw; background:rgba(18,18,26,.75); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
+  .logo{ font-family:'JetBrains Mono',monospace; font-weight:700; color:var(--lime); text-decoration:none; }
+  .logo span{ color:var(--muted); }
+  .back-link{ color:var(--muted); text-decoration:none; font-size:.9rem; border:1px solid var(--border); padding:8px 18px; border-radius:999px; transition:.2s; }
+  .back-link:hover{ border-color:var(--lime); color:var(--lime); }
+  .lang-btn{
+    background:var(--card); border:1px solid var(--border); color:var(--text);
+    padding:8px 16px; border-radius:999px; cursor:pointer; font-family:inherit;
+    font-weight:700; font-size:.85rem; transition:.2s;
+  }
+  .lang-btn:hover{ border-color:var(--lime); color:var(--lime); }
+  section{ position:relative; z-index:1; padding:80px 6vw; max-width:800px; margin:0 auto; }
+  .project-hero{ padding-top:50px; }
+  .project-hero h1{ font-size:clamp(2rem,4vw,3rem); font-weight:900; margin-bottom:12px; }
+  .project-hero .tagline{ color:var(--muted); font-size:1.1rem; margin-bottom:30px; }
+  .tech-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:40px; }
+  .tech-tag{ background:var(--card); border:1px solid var(--border); color:var(--lime); padding:6px 14px; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:.8rem; }
+  .project-content h2{ font-size:1.4rem; font-weight:800; margin:30px 0 16px; color:var(--lime); }
+  .project-content p{ color:var(--muted); line-height:1.9; font-size:1rem; margin-bottom:16px; }
+  .project-content ul{ color:var(--muted); line-height:2; padding-inline-start:20px; margin-bottom:20px; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; margin:40px 0; }
+  .btn{ padding:14px 28px; border-radius:12px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:.2s; font-size:.95rem; }
+  .btn-primary{ background:var(--lime); color:#12121A; }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 10px 30px rgba(196,241,53,.25); }
+  .btn-ghost{ border:1px solid var(--border); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--coral); color:var(--coral); }
+  .screenshot{ width:100%; border-radius:16px; border:1px solid var(--border); margin:30px 0; aspect-ratio:16/9; background:url('../patagonia-screenshot.png') center/cover; display:flex; align-items:center; justify-content:center; position:relative; }
+  .screenshot .overlay{ position:absolute; inset:0; background:linear-gradient(135deg,rgba(127,62,153,.4),rgba(254,162,36,.3)); border-radius:16px; }
+  .screenshot span{ position:relative; z-index:2; font-size:1.6rem; font-weight:900; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,.5); font-family:'JetBrains Mono',monospace; }
+  footer{ text-align:center; padding:30px; color:var(--muted); font-size:.85rem; border-top:1px solid var(--border); }
+</style>
+</head>
+<body>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+
+<nav>
+  <a href="../index.html" class="logo">Mustafa<span>.dev</span></a>
+  <div style="display:flex;align-items:center;gap:14px">
+    <a href="../index.html" class="back-link" data-i18n="nav_back">← Back</a>
+    <button class="lang-btn" id="langBtn">AR</button>
+  </div>
+</nav>
+
+<section class="project-hero">
+  <h1 data-i18n="title">Patagonia Adventure</h1>
+  <p class="tagline" data-i18n="tagline">A multi-page travel agency platform with full content management and Arabic/RTL support</p>
+  <div class="tech-tags">
+    <span class="tech-tag">HTML5</span>
+    <span class="tech-tag">CSS3</span>
+    <span class="tech-tag">JavaScript</span>
+    <span class="tech-tag">RTL</span>
+    <span class="tech-tag">Responsive</span>
+  </div>
+  <div class="screenshot"><div class="overlay"></div><span data-i18n="screenshot">PATAGONIA</span></div>
+  <div class="btn-row">
+    <a href="../patagonia/index.html" class="btn btn-primary" data-i18n="live_btn">Live preview →</a>
+    <a href="../index.html" class="btn btn-ghost" data-i18n="back_btn">← Back to portfolio</a>
+  </div>
+</section>
+
+<section class="project-content">
+  <h2 data-i18n="about_title">About This Project</h2>
+  <p data-i18n="about_p1">Patagonia Adventure is a professional travel agency website built for a brand specializing in curated tours across South America, Asia, and the Middle East. The platform consists of 16 interconnected pages — including 8 detailed destination pages, a blog section with 6 articles, image galleries, and a fully responsive layout optimized for all devices.</p>
+  <p data-i18n="about_p2">The site was built with a focus on brand identity using a distinctive purple and gold color palette, clean typography, and a consistent visual experience across every page. A structured database was prepared to manage destination content, blog articles, tour packages, and customer inquiries — ensuring the platform is ready for real-world deployment with dynamic content integration.</p>
+
+  <h2 data-i18n="features_title">Key Features</h2>
+  <ul>
+    <li data-i18n="feat1">Multiple destination pages with detailed itineraries, pricing, and photo galleries</li>
+    <li data-i18n="feat2">Blog engine with published travel guides, tips, and destination articles</li>
+    <li data-i18n="feat3">Full Arabic language support with RTL layout and right-aligned design</li>
+    <li data-i18n="feat4">Fully responsive interface (mobile, tablet, desktop)</li>
+    <li data-i18n="feat5">Professional brand identity system (purple + gold palette)</li>
+    <li data-i18n="feat6">Interactive FAQ accordion, client testimonials, and features showcase</li>
+    <li data-i18n="feat7">SEO-friendly structure and optimized content delivery</li>
+    <li data-i18n="feat8">Contact form with validation and inquiry management</li>
+    <li data-i18n="feat9">Scalable database-ready architecture for dynamic content management</li>
+  </ul>
+
+  <h2 data-i18n="stack_title">Technical Architecture</h2>
+  <p data-i18n="stack_text">Built on a foundation of standard web technologies — HTML5, CSS3, and vanilla JavaScript — ensuring maximum compatibility, fast load times, and ease of maintenance. The project follows a scalable architecture designed to accommodate dynamic content, with a structured backend schema prepared for managing destinations, articles, tour packages, and customer inquiries. Careful attention was given to performance optimization, cross-browser consistency, and a smooth user experience across all devices and screen sizes.</p>
+
+  <h2 data-i18n="learned_title">Project Insights</h2>
+  <p data-i18n="learned_text">This project required a deep focus on multi-language layout engineering, particularly mastering RTL (right-to-left) design systems alongside traditional LTR layouts. Building a cohesive multi-page platform from scratch demanded structured planning, reusable CSS architecture, and consistent component design. The outcome is a production-ready platform with a clean codebase optimized for maintainability and future scalability.</p>
+</section>
+
+<footer>
+  <span data-i18n="footer_text">© 2026 Built with passion (and way too many semicolons)</span>
+</footer>
+
+<script>
+const translations = {
+  ar: {
+    nav_back:"← رجوع",
+    title:"Patagonia Adventure",
+    tagline:"منصة وكالة سفر متعددة الصفحات مع إدارة محتوى متكاملة ودعم كامل للعربية",
+    screenshot:"باتاغونيا",
+    live_btn:"معاينة مباشرة →",
+    back_btn:"← الرجوع للمعرض",
+    about_title:"عن المشروع",
+    about_p1:"Patagonia Adventure هو موقع وكالة سفر احترافي تم بناؤه لعلامة تجارية متخصصة في الجولات السياحية في أمريكا الجنوبية، آسيا، والشرق الأوسط. المنصة تتكون من صفحات مترابطة — تشمل صفحات وجهات مفصلة، قسم مدونة بمقالات، معارض صور، وتصميم متجاوب بالكامل مُحسّن لجميع الأجهزة.",
+    about_p2:"تم بناء الموقع مع التركيز على الهوية البصرية باستخدام لوحة ألوان أرجواني وذهبي مميزة، خطوط نظيفة، وتجربة بصرية متناسقة عبر كل صفحة. تم تجهيز قاعدة بيانات منظمة لإدارة محتوى الوجهات، المقالات، الباقات السياحية، واستفسارات العملاء — مما يضمن أن المنصة جاهزة للنشر الفعلي مع إمكانية ربط المحتوى الديناميكي.",
+    features_title:"الميزات الرئيسية",
+    feat1:"صفحات وجهات متعددة مع جداول رحلات مفصلة، أسعار، ومعارض صور",
+    feat2:"محرك مدونة بمقالات منشورة تغطي أدلة السفر والنصائح",
+    feat3:"دعم كامل للغة العربية مع تخطيط RTL وتصميم محاذي لليمين",
+    feat4:"واجهة متجاوبة بالكامل (جوال، جهاز لوحي، كمبيوتر)",
+    feat5:"نظام هوية بصرية احترافي (بالتة أرجواني + ذهبي)",
+    feat6:"أسئلة شائعة تفاعلية، شهادات عملاء، وعرض مميزات",
+    feat7:"هيكل متوافق مع تحسين محركات البحث وتوصيل محتوى محسّن",
+    feat8:"نموذج تواصل مع التحقق وإدارة الاستفسارات",
+    feat9:"هندسة قابلة للتوسع وجاهزة لإدارة المحتوى الديناميكي",
+    stack_title:"الهندسة التقنية",
+    stack_text:"مبني على أساس تقنيات ويب قياسية — HTML5، CSS3، و JavaScript الخالص — لضمان أقصى توافق، سرعة تحميل، وسهولة صيانة. المشروع يتبع هندسة قابلة للتوسع مصممة لاستيعاب المحتوى الديناميكي، مع هيكل خلفي منظم جاهز لإدارة الوجهات، المقالات، باقات السفر، واستفسارات العملاء. تم إيلاء اهتمام خاص لتحسين الأداء، التوافق عبر المتصفحات، وتجربة مستخدم سلسة على جميع الأجهزة وأحجام الشاشات.",
+    learned_title:"رؤى المشروع",
+    learned_text:"تطلب هذا المشروع تركيزاً عميقاً على هندسة التخطيط متعدد اللغات، خاصة إتقان أنظمة التصميم RTL (من اليمين لليسار) جنباً إلى جنب مع التخطيطات التقليدية LTR. بناء منصة متعددة الصفحات من الصفر تطلب تخطيطاً منظماً، هندسة CSS قابلة لإعادة الاستخدام، وتصميماً متناسقاً للمكونات. النتيجة هي منصة جاهزة للإنتاج مع قاعدة أكواد نظيفة محسّنة للصيانة والتوسع المستقبلي.",
+    footer_text:"© 2026 معمول بشغف (وكمية فاصلة منقوطة زيادة)"
+  }
+};
+translations.en = {
+  title:"Patagonia Adventure",
+  tagline:"A multi-page travel agency platform with full content management and Arabic/RTL support",
+  screenshot:"PATAGONIA",
+  live_btn:"Live preview →",
+  back_btn:"← Back to portfolio",
+  about_title:"About This Project",
+  about_p1:"Patagonia Adventure is a professional travel agency website built for a brand specializing in curated tours across South America, Asia, and the Middle East. The platform consists of multiple interconnected pages — including detailed destination pages, a blog section with published articles, image galleries, and a fully responsive layout optimized for all devices.",
+  about_p2:"The site was built with a focus on brand identity using a distinctive purple and gold color palette, clean typography, and a consistent visual experience across every page. A structured database was prepared to manage destination content, blog articles, tour packages, and customer inquiries — ensuring the platform is ready for real-world deployment with dynamic content integration.",
+  features_title:"Key Features",
+  feat1:"Multiple destination pages with detailed itineraries, pricing, and photo galleries",
+  feat2:"Blog engine with published travel guides, tips, and destination articles",
+  feat3:"Full Arabic language support with RTL layout and right-aligned design",
+  feat4:"Fully responsive interface (mobile, tablet, desktop)",
+  feat5:"Professional brand identity system (purple + gold palette)",
+  feat6:"Interactive FAQ accordion, client testimonials, and features showcase",
+  feat7:"SEO-friendly structure and optimized content delivery",
+  feat8:"Contact form with validation and inquiry management",
+  feat9:"Scalable database-ready architecture for dynamic content management",
+  stack_title:"Technical Architecture",
+  stack_text:"Built on a foundation of standard web technologies — HTML5, CSS3, and vanilla JavaScript — ensuring maximum compatibility, fast load times, and ease of maintenance. The project follows a scalable architecture designed to accommodate dynamic content, with a structured backend schema prepared for managing destinations, articles, tour packages, and customer inquiries. Careful attention was given to performance optimization, cross-browser consistency, and a smooth user experience across all devices and screen sizes.",
+  learned_title:"Project Insights",
+  learned_text:"This project required a deep focus on multi-language layout engineering, particularly mastering RTL (right-to-left) design systems alongside traditional LTR layouts. Building a cohesive multi-page platform from scratch demanded structured planning, reusable CSS architecture, and consistent component design. The outcome is a production-ready platform with a clean codebase optimized for maintainability and future scalability.",
+  footer_text:"© 2026 Built with passion (and way too many semicolons)"
+};
+let currentLang = 'en';
+try{ currentLang = localStorage.getItem('portfolio_lang') || 'en'; }catch(e){};
+applyLang();
+document.getElementById('langBtn').addEventListener('click', toggleLang);
+function toggleLang(){
+  currentLang = currentLang === 'ar' ? 'en' : 'ar';
+  try{ localStorage.setItem('portfolio_lang', currentLang);
+  }catch(e){};
+  applyLang();
+}
+function applyLang(){
+  const html = document.getElementById('htmlRoot');
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  const btn = document.getElementById('langBtn');
+  if(btn) btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(translations[currentLang][key]) el.innerHTML = translations[currentLang][key];
+  });
+}
+</script>
+</body>
+</html>
