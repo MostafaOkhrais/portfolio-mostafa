@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mostafakhrais.dev/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mostafakhrais.dev/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://mostafakhrais.dev/?lang=ar"/>
+    <loc>https://portfolio-mostafakhrais.vercel.app/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-mostafakhrais.vercel.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portfolio-mostafakhrais.vercel.app/?lang=ar"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mostafakhrais.dev/cv/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mostafakhrais.dev/cv/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://mostafakhrais.dev/cv/?lang=ar"/>
+    <loc>https://portfolio-mostafakhrais.vercel.app/cv/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://portfolio-mostafakhrais.vercel.app/cv/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://portfolio-mostafakhrais.vercel.app/cv/?lang=ar"/>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

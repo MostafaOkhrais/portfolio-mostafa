@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mostafakhrais.dev/sitemap.xml
+Sitemap: https://portfolio-mostafakhrais.vercel.app/sitemap.xml
