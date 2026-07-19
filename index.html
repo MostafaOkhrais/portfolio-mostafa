@@ -8,8 +8,7 @@
 <meta name="author" content="Mostafa Khrais">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#12121A">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
 
 <link rel="canonical" href="https://mostafakhrais.dev/">
 <link rel="alternate" hreflang="en" href="https://mostafakhrais.dev/">
@@ -35,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&family=Cairo:wght@400;600;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 
 <script type="application/ld+json">
 {
@@ -73,24 +72,22 @@
 <div class="blob blob2"></div>
 
 <nav>
-  <div class="logo">Mustafa<span>.dev</span></div>
+  <div class="logo">Mostafa</div>
   <ul class="nav-links">
     <li><a href="#projects" data-i18n="nav_projects">Work</a></li>
     <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
     <li><a href="#about" data-i18n="nav_about">About</a></li>
     <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-    <li><a href="/cv/" data-i18n="nav_cv">CV</a></li>
+    <li><a href="cv.html" data-i18n="nav_cv">CV</a></li>
   </ul>
   <button class="lang-btn" id="langBtn" aria-label="Switch language">AR</button>
 </nav>
 
 <section class="hero">
-  <div>
+  <div class="reveal reveal-left">
     <span class="eyebrow" data-i18n="eyebrow">// currently accepting pull requests (and coffee)</span>
     <h1>
-      <span data-i18n="hero_line1">I turn coffee & bugs</span><br>
-      <span class="accent" data-i18n="hero_line2">into web apps</span>
-      <span class="accent2" data-i18n="hero_line3">that actually work</span>
+      <span data-i18n="hero_line1">I turn coffee & bugs into web apps that actually work</span>
     </h1>
     <p class="lead" data-i18n="hero_desc">Full Stack Web Developer who writes code, breaks stuff, fixes it (eventually), and ships it. I make the pixels dance and the databases sing. Passionate about clean UI, solid backends, and that dopamine hit when it finally compiles.</p>
     <div class="cta-row">
@@ -98,7 +95,7 @@
       <a href="#contact" class="btn btn-ghost" data-i18n="cta_contact">Let's talk →</a>
     </div>
   </div>
-  <div class="code-window">
+  <div class="code-window reveal reveal-right reveal-delay-1">
     <div class="code-header">
       <div class="dot dot1"></div><div class="dot dot2"></div><div class="dot dot3"></div>
       <span class="code-title">developer.js</span>
@@ -108,20 +105,20 @@
   role: <span class="tok-str">"Full Stack Web Developer"</span>,
   stack: [<span class="tok-str">"HTML"</span>, <span class="tok-str">"CSS"</span>, <span class="tok-str">"JS"</span>, <span class="tok-str">"React"</span>, <span class="tok-str">"PHP"</span>],
   currentBuild: <span class="tok-str">"Manara"</span>,
-  <span class="tok-fn">status</span>: () <span class="tok-key">=></span> <span class="tok-str">"open for work"</span>,
+  <span class="tok-fn">status</span>: () <span class="tok-key">=></span> <span class="tok-str">"ready for work"</span>,
 };
 <span class="tok-com">// ready for the next adventure</span></pre>
   </div>
 </section>
 
 <section id="projects">
-  <div class="section-head">
+  <div class="section-head reveal">
     <span class="section-tag" data-i18n="proj_tag">// SHOWCASE</span>
     <h2 data-i18n="proj_title">Stuff I've Built</h2>
   </div>
   <div class="projects-grid">
-    <div class="project-card" id="card-web">
-      <div class="project-thumb" style="background:url('/website/brave_cVwAQXh0vW.png') center/cover no-repeat"><div class="overlay" style="background:linear-gradient(135deg,rgba(74,53,112,.6),rgba(42,31,69,.7))"></div><span class="thumb-text" style="color:#FFC94D" data-i18n="p1_thumb">مَنَارَة</span></div>
+    <div class="project-card reveal reveal-delay-1" id="card-web">
+      <div class="project-thumb" style="background:url('website/brave_cVwAQXh0vW.webp') center/cover no-repeat" role="img" aria-label="Manara platform screenshot showing the Tawjihi student interface"><div class="overlay" style="background:linear-gradient(135deg,rgba(74,53,112,.6),rgba(42,31,69,.7))"></div><span class="thumb-text" style="color:#FFC94D" data-i18n="p1_thumb">مَنَارَة</span></div>
       <div class="project-body">
         <h3 data-i18n="p1_title">Manara — منارة</h3>
         <p data-i18n="p1_desc">A full-stack platform for Tawjihi students: Android app + companion website sharing one database. Books, past exams, summaries — all available offline. Built with Java, HTML, CSS, and JavaScript.</p>
@@ -129,8 +126,8 @@
         <span class="project-link" data-i18n="link_live">Live preview →</span>
       </div>
     </div>
-    <div class="project-card" id="card-patagonia">
-      <div class="project-thumb" style="background:url('/patagonia-screenshot.png') center/cover no-repeat"><div class="overlay" style="background:linear-gradient(135deg,rgba(127,62,153,.7),rgba(254,162,36,.5))"></div><span class="thumb-text" data-i18n="p4_thumb">PATAGONIA</span></div>
+    <div class="project-card reveal reveal-delay-2" id="card-patagonia">
+      <div class="project-thumb" style="background:url('patagonia-screenshot.webp') center/cover no-repeat" role="img" aria-label="Patagonia Adventure travel agency website screenshot"><div class="overlay" style="background:linear-gradient(135deg,rgba(127,62,153,.7),rgba(254,162,36,.5))"></div><span class="thumb-text" data-i18n="p4_thumb">PATAGONIA</span></div>
       <div class="project-body">
         <h3 data-i18n="p4_title">باتاغونيا — PATAGONIA</h3>
         <p data-i18n="p4_desc">A full-blown travel agency website with 8 destinations, a blog, and image galleries. RTL, Arabic support, and enough CSS to make you cry. Built with love and way too many media queries.</p>
@@ -138,7 +135,7 @@
         <span class="project-link" data-i18n="link_live">Live preview →</span>
       </div>
     </div>
-    <div class="project-card" id="card-api">
+    <div class="project-card reveal reveal-delay-3" id="card-api">
       <div class="project-thumb" style="background:linear-gradient(135deg,#4A3570,#2A1F45);display:flex;flex-direction:column;gap:6px"><span style="font-size:1.8rem;font-weight:900;color:#FFC94D" data-i18n="p3_thumb_title">مَنَارَة</span><span style="font-size:.8rem;opacity:.8;color:#D0BCFF" data-i18n="p3_thumb">Android App</span><small style="position:absolute;bottom:10px;inset-inline-end:14px;opacity:.7;font-size:.7rem" data-i18n="p3_badge">coming soon</small></div>
       <div class="project-body">
         <h3 data-i18n="p3_title">Manara Android — منارة</h3>
@@ -151,11 +148,11 @@
 </section>
 
 <section id="skills">
-  <div class="section-head">
+  <div class="section-head reveal">
     <span class="section-tag" data-i18n="skills_tag">// ARSENAL</span>
     <h2 data-i18n="skills_title">What I Speak (Code, mostly)</h2>
   </div>
-  <div class="skills-wrap">
+  <div class="skills-wrap reveal">
     <div class="skill-pill"><span class="sw"></span>HTML5</div>
     <div class="skill-pill"><span class="sw"></span>CSS3</div>
     <div class="skill-pill"><span class="sw"></span>JavaScript</div>
@@ -174,7 +171,7 @@
 
 <section id="about">
   <div class="about-grid">
-    <div>
+    <div class="reveal reveal-left">
       <span class="section-tag" data-i18n="about_tag">// THE STORY</span>
       <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;margin-bottom:20px;" data-i18n="about_title">The Developer Behind the Screen</h2>
       <p data-i18n="about_p1">Full Stack Web Developer who genuinely gets excited about well-structured code and responsive layouts. I believe the perfect app is one where no one notices the tech — they're too busy enjoying it. Also know my way around Java + Android when needed.</p>
@@ -184,7 +181,7 @@
         <div class="stat"><h4>100%</h4><span data-i18n="stat2">Caffeine → code ratio</span></div>
       </div>
     </div>
-    <div class="code-window">
+    <div class="code-window reveal reveal-right">
       <div class="code-header"><div class="dot dot1"></div><div class="dot dot2"></div><div class="dot dot3"></div><span class="code-title">about.json</span></div>
       <pre class="code-body">{
   <span class="tok-fn">"focus"</span>: <span class="tok-str">"Full Stack Web"</span>,
@@ -198,13 +195,13 @@
 </section>
 
 <section id="contact">
-  <div class="contact-card">
+  <div class="contact-card reveal">
     <h2 data-i18n="contact_title">Let's Create Something Epic</h2>
     <p data-i18n="contact_desc">Got a project? An idea? Need a website that doesn't look like it's from 2005? Drop a message. Open for freelance, collabs, or debating why tabs are better than spaces. (Just kidding. Use whatever works.)</p>
     <div class="contact-links">
-      <a href="mailto:Mostafakhraisus@gmail.com" class="btn btn-primary">Email</a>
+      <a href="#" class="btn btn-primary" id="email-link">Email</a>
       <a href="https://wa.me/972597570800" class="btn btn-primary">WhatsApp</a>
-      <a href="/Mostafa_Khrais_CV.pdf" class="btn btn-primary" download data-i18n="download_cv">Download CV ↓</a>
+      <a href="Mostafa_Khrais_CV.pdf" class="btn btn-primary" download data-i18n="download_cv">Download CV ↓</a>
     </div>
   </div>
 </section>
@@ -213,12 +210,7 @@
   <span data-i18n="footer_text">© 2026 Built with passion (and way too many semicolons)</span>
 </footer>
 
-<script src="/main.js"></script>
-<script>
-(function() {
-  App.initLanguage();
-  App.initProjectCards();
-})();
-</script>
+<script src="main.js"></script>
+
 </body>
 </html>
